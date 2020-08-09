@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Mars Info</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container">
+
+        <div class="jumbotron text-center">
+            <h1 class="display-2">Mission to Mars</h1>
+            <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape New Data!</a></p>
+        </div>
+
+        <!-- Mars Info -->
+        <div class="row">
+            <div class="col-md-12">
+                <h3 class="heading">Latest Mars News</h3>
+                <h5>{{mars.title}}</h5>
+                <small>{{mars.news_p}}</small>
+            </div>
+        </div>
+        <div class="row" style="margin-top: 20px;">
+            <div class="col-md-8">
+                <h3 class="heading">Featured Mars Image</h3>
+                <img src={{mars.featured_image_url}} style="width: 600px; max-height: 600px ;">
+            </div>
+            <div class="col-md-4">
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">Current Mars Weather</h5>
+                        <p class="card-text">{{mars.mars_weather}}</p>
+                    </div>
+                </div>
+                <table style="border: 10; margin-top: 20px;" class="table table-sm">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th scope="col">Value</th>
+                            <th scope="col">Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Equatorial Diameter:</td><td>{{mars.mars_facts.Value['Equatorial Diameter:']}}</td>
+                        </tr>
+                        <tr>
+                            <td>Polar Diameter:</td><td>{{mars.mars_facts.Value['Polar Diameter:']}}</td>
+                        </tr>
+                        <tr>
+                            <td>Mass:</td><td>{{mars.mars_facts.Value['Mass:']}}</td>
+                        </tr>
+                        <tr>
+                            <td>Moons:</td><td>{{mars.mars_facts.Value['Moons:']}}</td>
+                        </tr>
+                        <tr>
+                            <td>Orbit Distance:</td><td>{{mars.mars_facts.Value['Orbit Distance:']}}</td>
+                        </tr>
+                        <tr>
+                            <td>Orbit Period:</td><td>{{mars.mars_facts.Value['Orbit Period:']}}</td>
+                        </tr>
+                        <tr>
+                            <td>Surface Temperature:</td><td>{{mars.mars_facts.Value['Surface Temperature:']}}</td>
+                        </tr>
+                        <tr>
+                            <td>First Record:</td><td>{{mars.mars_facts.Value['First Record:']}}</td>
+                        </tr>
+                        <tr>
+                            <td>Recorded by:</td><td>{{mars.mars_facts.Value['Recorded By:']}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="row" style="margin-top: 20px;">
+            <div class="col-md-12 text-center">
+                <h3 class="heading">Mars Hemispheres</h3>
+            </div>
+        </div>
+        <div class="row" style="margin-top: 20px;">
+            <div class="col-md-6">
+                <div class="card" style="width: 100%;">
+                    <img class="card-img-top" src={{mars.hemisphere_image_urls[0].img_url}} >
+                    <div class="card-body">
+                      <h5 class="card-title">{{mars.hemisphere_image_urls[0].title}}</h5>
+                    </div>
+                  </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card" style="width: 100%;">
+                    <img class="card-img-top" src={{mars.hemisphere_image_urls[1].img_url}} >
+                    <div class="card-body">
+                      <h5 class="card-title">{{mars.hemisphere_image_urls[1].title}}</h5>
+                    </div>
+                  </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card" style="width: 100%;">
+                    <img class="card-img-top" src={{mars.hemisphere_image_urls[2].img_url}} >
+                    <div class="card-body">
+                      <h5 class="card-title">{{mars.hemisphere_image_urls[2].title}}</h5>
+                    </div>
+                  </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card" style="width: 100%;">
+                    <img class="card-img-top" src={{mars.hemisphere_image_urls[3].img_url}} >
+                    <div class="card-body">
+                      <h5 class="card-title">{{mars.hemisphere_image_urls[3].title}}</h5>
+                    </div>
+                  </div>
+            </div>
+        </div>
+
+            <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+            <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+</body>
+
+</html>
